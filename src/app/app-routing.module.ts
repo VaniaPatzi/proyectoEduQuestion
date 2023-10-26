@@ -5,10 +5,11 @@ import { LoginComponent } from './components/login/login.component';
 import { TareasComponent } from './components/tareas/tareas.component';
 
 const routes: Routes = [
-  {path: '', redirectTo:'inicio', pathMatch:'full'},
-  {path: 'inicio', component: InicioComponent},
+  {path: '', redirectTo:'login', pathMatch:'full'},
   {path: 'login', component: LoginComponent},
+  {path: 'inicio', component: InicioComponent},
   {path: 'paginainicio', component: TareasComponent},
+  {path: '**', redirectTo:'login', pathMatch:'full'}
 ];
 
 @NgModule({

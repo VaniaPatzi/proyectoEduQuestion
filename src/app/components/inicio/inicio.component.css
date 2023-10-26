@@ -1,0 +1,39 @@
+.imagen-con-boton-container {
+    position: relative;
+    text-align: center;
+  }
+  
+  .fondo-imagen {
+    width: 100%;
+    height: auto;
+  }
+  
+  .contenido-imagen {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+  }
+  
+  .titulo {
+    font-size: 36px;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  
+  .boton-continuar {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .boton-continuar:hover {
+    background-color: #0056b3;
+  }
+  

@@ -7,10 +7,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./inicio.component.css']
 })
 export class InicioComponent {
+  authGoogleService: any;
 
   constructor(private router: Router) { }
 
-  navegarALogin() {
-    this.router.navigate(['/login']);
+  login() {
+    this.authGoogleService.login();
   }
 }

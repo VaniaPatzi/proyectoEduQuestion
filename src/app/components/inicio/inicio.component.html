@@ -11,8 +11,27 @@
                 <option value="2">Secundaria</option>
                 <option value="3">Universitario</option>
               </select>
+              <h2>Todo List</h2>
 
-              <a class="btn btn-primary" href="../components/navbar/#offcanvas" role="button">Learn more about offcanvas navbars &raquo;</a>
+              <div class="form-group">
+                <label for="materia">Materia:</label>
+                <input type="text" class="form-control" id="materia" [(ngModel)]="nuevaMateria">
+              </div>
+            
+              <div class="form-group">
+                <label for="nota">Nota:</label>
+                <input type="number" class="form-control" id="nota" [(ngModel)]="nuevaNota">
+              </div>
+            
+              <button class="btn btn-primary" (click)="agregarMateria()">Agregar Materia</button>
+            
+              <ul class="list-group mt-3">
+                <li class="list-group-item" *ngFor="let todo of todos">
+                  {{ todo.materia }} - Nota: {{ todo.nota }}
+                </li>
+              </ul>
+
+              <a class="btn btn-primary" role="button">Enviar </a>
             
         </div>
         </div>

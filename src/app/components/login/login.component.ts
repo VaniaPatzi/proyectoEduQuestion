@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Route, Router } from '@angular/router';
+import { AuthService } from '@auth0/auth0-angular';
 
 @Component({
   selector: 'app-login',
@@ -8,12 +9,18 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent {
 
-  authGoogleService: any;
+  constructor(public auth: AuthService, private router: Router) { }
 
-  constructor(private router: Router) { }
+  ngOnInit(): void{
+    this.auth.isAuthenticated$.subscribe(isAuthenticaed =>{
+      if(isAuthenticaed){
+        this.router.navigate(['/inicio'])
+      }
+    })
+  }
 
   login() {
-    this.authGoogleService.login();
+    this.auth.loginWithRedirect()
   }
 }
 

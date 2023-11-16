@@ -5,8 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { InicioComponent } from './components/inicio/inicio.component';
-import { OAuthModule } from 'angular-oauth2-oidc';
-import { HttpClientModule } from '@angular/common/http';
 import { TareasComponent } from './components/tareas/tareas.component';
 import { MenuComponent } from './components/menu/menu.component';
 
@@ -23,16 +21,12 @@ import { AuthModule } from '@auth0/auth0-angular';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    OAuthModule.forRoot(),
-    HttpClientModule,
 
     // Import the module into the application, with configuration
     AuthModule.forRoot({
       domain: 'dev-bi4egrb5e4ay8rvj.us.auth0.com',
       clientId: 'SBWeJ0myCXyFmX1v9wNWpbFOsYzHZaEB',
-      authorizationParams: {
-        redirect_uri: window.location.origin
-      }
+      
     }),
     
 

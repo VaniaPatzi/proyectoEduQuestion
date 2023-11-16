@@ -8,16 +8,16 @@ import { InicioComponent } from './components/inicio/inicio.component';
 import { OAuthModule } from 'angular-oauth2-oidc';
 import { HttpClientModule } from '@angular/common/http';
 import { TareasComponent } from './components/tareas/tareas.component';
-import { EncabezadoComponent } from './components/encabezado/encabezado.component';
 import { MenuComponent } from './components/menu/menu.component';
 
+// Import the module from the SDK
+import { AuthModule } from '@auth0/auth0-angular';
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     InicioComponent,
     TareasComponent,
-    EncabezadoComponent,
     MenuComponent
   ],
   imports: [
@@ -25,6 +25,15 @@ import { MenuComponent } from './components/menu/menu.component';
     AppRoutingModule,
     OAuthModule.forRoot(),
     HttpClientModule,
+
+    // Import the module into the application, with configuration
+    AuthModule.forRoot({
+      domain: 'dev-bi4egrb5e4ay8rvj.us.auth0.com',
+      clientId: 'SBWeJ0myCXyFmX1v9wNWpbFOsYzHZaEB',
+      authorizationParams: {
+        redirect_uri: window.location.origin
+      }
+    }),
     
 
   ],

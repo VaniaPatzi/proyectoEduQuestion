@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { AuthService } from '@auth0/auth0-angular';
 
 @Component({
   selector: 'app-inicio',
@@ -7,11 +7,6 @@ import { Router } from '@angular/router';
   styleUrls: ['./inicio.component.css']
 })
 export class InicioComponent {
-  authGoogleService: any;
-
-  constructor(private router: Router) { }
-
-  login() {
-    this.authGoogleService.login();
-  }
+ 
+  constructor(public auth: AuthService) {}
 }

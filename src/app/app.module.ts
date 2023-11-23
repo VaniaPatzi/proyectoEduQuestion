@@ -11,13 +11,19 @@ import { MenuComponent } from './components/menu/menu.component';
 
 // Import the module from the SDK
 import { AuthModule } from '@auth0/auth0-angular';
+import { ListaTareaComponent } from './component/lista-tarea/lista-tarea.component';
+import { ItinerarioComponent } from './component/itinerario/itinerario.component';
+import { GuiaDeTareaComponent } from './components/guia-de-tarea/guia-de-tarea.component';
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     InicioComponent,
     TareasComponent,
-    MenuComponent
+    MenuComponent,
+    ListaTareaComponent,
+    ItinerarioComponent,
+    GuiaDeTareaComponent
   ],
   imports: [
     BrowserModule,
